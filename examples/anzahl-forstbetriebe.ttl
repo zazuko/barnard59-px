@@ -1,0 +1,61 @@
+@base <http://example.org/pipeline/>.
+@prefix code: <https://code.described.at/>.
+@prefix p: <https://pipeline.described.at/>.
+
+<pipeline> a p:Pipeline;
+  p:variables [
+    p:variable [ a p:Variable;
+      p:name "url";
+      p:value "https://www.pxweb.bfs.admin.ch/DownloadFile.aspx?file=px-x-0703010000_103"
+    ], [ a p:Variable;
+      p:name "baseIRI";
+      p:value "http://example.org/anzahl-forstbetriebe/"
+    ], [ a p:Variable;
+      p:name "columns";
+      p:value """[{
+        "titles": "Jahr",
+        "datatype": "http://www.w3.org/2001/XMLSchema#gYear"
+      }]"""
+    ], [ a p:Variable;
+      p:name "encoding";
+      p:value "iso-8859-15"
+     ]
+  ];
+  p:steps [
+    p:stepList ( <fetch> <parse> <serialize> <write> )
+  ].
+
+<fetch> a p:Step;
+  code:implementedBy [ a code:EcmaScript;
+    code:link <node:barnard59-http#fetch>
+  ];
+  code:arguments [
+    code:name "url";
+    code:value "url"^^p:VariableName
+  ].
+
+<parse> a p:Step;
+  code:implementedBy [ a code:EcmaScript;
+    code:link <file:..#parse>
+  ];
+  code:arguments [
+    code:name "baseIRI";
+    code:value "baseIRI"^^p:VariableName
+  ], [
+    code:name "columns";
+    code:value "JSON.parse(this.variables.get('columns'))"^^code:EcmaScript
+  ], [
+    code:name "encoding";
+    code:value "encoding"^^p:VariableName
+  ].
+
+<serialize> a p:Step;
+  code:implementedBy [ a code:EcmaScript;
+    code:link <node:barnard59-formats/ntriples.js#serialize>
+  ].
+
+<write> a p:Step;
+  code:implementedBy [ a code:EcmaScript;
+    code:link <node:fs#createWriteStream>
+  ];
+  code:arguments ("examples/anzahl-forstbetriebe.out.nt").
