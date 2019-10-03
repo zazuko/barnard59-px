@@ -1,9 +1,11 @@
 {
   "name": "barnard59-px",
-  "version": "0.0.6",
+  "version": "0.0.0",
   "description": "Support for the PC-Axis (PX) format for Barnard59 Linked Data pipelines",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "standard"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/zazuko/barnard59-px.git"
@@ -22,6 +24,7 @@
   "devDependencies": {
     "barnard59": "0.0.5",
     "barnard59-formats": "0.0.6",
-    "barnard59-http": "git+https://github.com/zazuko/barnard59-http.git#master"
+    "barnard59-http": "git+https://github.com/zazuko/barnard59-http.git#master",
+    "standard": "^14.3.1"
   }
 }
