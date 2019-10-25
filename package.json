@@ -19,7 +19,7 @@
   "homepage": "https://github.com/zazuko/barnard59-px",
   "dependencies": {
     "@rdfjs/sink-to-duplex": "^1.0.0",
-    "rdf-parser-px": "0.0.3"
+    "rdf-parser-px": "0.0.4"
   },
   "devDependencies": {
     "barnard59": "0.0.5",
