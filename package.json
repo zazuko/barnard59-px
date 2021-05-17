@@ -1,6 +1,6 @@
 {
   "name": "barnard59-px",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Support for the PC-Axis (PX) format for Barnard59 Linked Data pipelines",
   "main": "index.js",
   "scripts": {
