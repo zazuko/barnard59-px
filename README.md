@@ -11,5 +11,5 @@ The example reads a PX file from `https://www.pxweb.bfs.admin.ch/DownloadFile.as
 The pipeline can be started like this:
 
 ```bash
-./node_modules/.bin/barnard59 run --format=text/turtle --pipeline=http://example.org/pipeline/pipeline --verbose examples/anzahl-forstbetriebe.ttl
+npx barnard59 run --format=text/turtle --pipeline=http://example.org/pipeline/pipeline --verbose examples/anzahl-forstbetriebe.ttl
 ```

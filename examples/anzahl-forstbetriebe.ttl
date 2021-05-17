@@ -19,7 +19,10 @@
     ], [ a p:Variable;
       p:name "encoding";
       p:value "iso-8859-15"
-     ]
+    ], [ a p:Variable;
+      p:name "observer";
+      p:value "http://example.org/observer"
+    ]
   ];
   p:steps [
     p:stepList ( <fetch> <parse> <serialize> <write> )
@@ -47,6 +50,9 @@
   ], [
     code:name "encoding";
     code:value "encoding"^^p:VariableName
+  ], [
+    code:name "observer";
+    code:value "observer"^^p:VariableName
   ].
 
 <serialize> a p:Step;
