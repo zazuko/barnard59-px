@@ -19,12 +19,12 @@
   "homepage": "https://github.com/zazuko/barnard59-px",
   "dependencies": {
     "@rdfjs/sink-to-duplex": "^1.0.0",
-    "rdf-parser-px": "0.1.0"
+    "rdf-parser-px": "^0.2.0"
   },
   "devDependencies": {
-    "barnard59": "0.0.5",
-    "barnard59-formats": "0.0.6",
-    "barnard59-http": "0.0.1",
-    "standard": "^14.3.1"
+    "barnard59": "^0.1.2",
+    "barnard59-formats": "^0.1.2",
+    "barnard59-http": "^0.1.0",
+    "standard": "^16.0.3"
   }
 }
